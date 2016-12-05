@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1,requiresActiveX=true" />
+    <meta http-equiv="x-rim-auto-match" content="none" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>ui mobile</title>
+    <style type="text/css">
+        html{
+    font-family: sans-serif;
+    -webkit-text-size-adjust:100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary{
+    display: block;
+}
+audio,
+canvas,
+progress,
+video{
+    display: inline-block;
+    vertical-align: baseline;
+}
+audio:not([controls]){
+    display: none;
+    height: 0;
+}
+[hidden],
+template{
+    display: none;
+}
+a{
+    background: transparent;
+}
+a:active,
+a:hover{
+    outline: 0;
+}
+abbr[title]{
+    border-bottom: 1px dotted;
+}
+b,
+strong{
+    font-weight: bold;
+}
+dfn{
+    font-style: italic;
+}
+h1{
+    font-size: 2em;
+    margin: .67em 0;
+}
+mark{
+    color: #000;
+    background: #ff0;
+}
+small{
+    font-size: 80%;
+}
+sub,
+sup{
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup{
+    top: -.5em;
+}
+sub{
+    bottom: -.25em;
+}
+img{
+    border: 0;
+}
+svg:not(:root){
+    overflow: hidden;
+}
+figure{
+    margin: 1em 40px;
+}
+hr{
+    box-sizing: content-box;
+    height: 0;
+}
+pre{
+    overflow: auto;
+}
+code,
+kbd,
+pre,
+samp{
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea{
+    font: inherit;
+    margin: 0;
+    color: inherit;
+}
+button{
+    overflow: visible;
+}
+button,
+select{
+    text-transform: none;
+}
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit']{
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+button[disabled],
+html input[disabled]{
+    cursor: default;
+}
+input{
+    line-height: normal;
+}
+input[type='checkbox'],
+input[type='radio']{
+    box-sizing: border-box;
+    padding: 0;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button{
+    height: auto;
+}
+input[type='search']{
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-appearance: textfield;
+}
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration{
+    -webkit-appearance: none;
+}
+fieldset{
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+    border: 1px solid #c0c0c0;
+}
+legend{
+    padding: 0;
+    border: 0;
+}
+textarea{
+    overflow: auto;
+}
+optgroup{
+    font-weight: bold;
+}
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td,
+th{
+    padding: 0;
+}
+html *{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    margin:0;
+    -webkit-overflow-scrolling: touch;
+}
+html, body{
+    height:100%;
+}
+html{
+    overflow: hidden !important;
+}
+.view-container{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-size:.5rem;
+}
+.view-header,
+.view-footer{
+    display: block;
+    height:1rem;
+    line-height: 1rem;
+    width: 100%;
+    left: 0;
+}
+.view-header{
+    top: 0;
+}
+.view-footer{
+    bottom: 0;
+}
+.view-page{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
+}
+.view-page .view-scroll{
+    display: block;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.view-page .view-scroll .scroll-container{
+    position: absolute;
+    width: 100%;
+}
+    </style>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+</head>
+<body>
+<div class="view-container">
+    <div class="view-page">
+        <div class="view-header">header</div>
+        <div class="view-scroll" id="aaa">
+            <div class="scroll-container" id="xxx"></div>
+        </div>
+        <div class="view-footer">footer</div>
+    </div>
+</div>
+<script type="text/javascript">
+var html = '';
+var x = 0, y = 0, z = 0;
+while(36 - x){
+    chr = x.toString(36);
+    html += '<div>';
+    y = 20;
+    while(y--){
+        z = 20;
+        while(z--){
+            html += chr;
+        }
+        html += '<br>';
+    }
+    html += '</div>';
+    x++;
+}
+document.getElementById("xxx").innerHTML = html;
+(function(window){
+    function TouchScroll(elemWrap, elemScroll){
+        this.wrap = elemWrap;
+        this.scroll = elemScroll;
+        this.currTop = 0;
+        this.opts = {
+            startY:0,
+            lastY:0
+        };
+        this.stopInertiaMove = false;
+        this.inertiaMoveID = null;
+        this.lastMove = {
+            time:0,
+            start:0
+        };
+        var that = this;
+        elemWrap.addEventListener('touchstart', function(e){
+            e.preventDefault();
+            var lastY = e.touches[0].pageY;
+            that.opts.lastY = that.opts.startY = lastY;
+            that.lastMove.start = lastY;
+            that.lastMove.time = e.timeStamp || Date.now();
+            that.stopInertiaMove = true;
+        }, false);
+        elemWrap.addEventListener('touchmove', function(e){
+            e.preventDefault();
+            var nowY = that.getTouchMove(e).pageY;
+            var nowTime = e.timeStamp || Date.now();
+            that.stopInertiaMove = true;
+            if(nowTime - that.lastMove.time > 300){
+                that.lastMove.time = nowTime;
+                that.lastMove.start = nowY;
+            }
+        }, false);
+        elemWrap.addEventListener('touchend', function(e){
+            e.preventDefault();
+            var nowY = that.getTouchMove(e).pageY;
+            var nowTime = e.timeStamp || Date.now();
+            var v = (nowY - that.lastMove.start) / (nowTime - that.lastMove.time);
+            that.stopInertiaMove = false;
+            if(Math.abs(v) > 0.5){
+                that.setInertiaMove(v, nowTime);
+            }
+        }, false);
+    }
+    TouchScroll.prototype.setScroll = function(top){
+        top = this.currTop = this.getClearTop(top);
+        this.scroll.style.webkitTransform = "translate3d(0px, " + top + "px, 0px)";
+    };
+    TouchScroll.prototype.getTouchMove = function(e){
+        var touch = e.touches[0] || e.changedTouches[0];
+        var nowY = touch.pageY;
+        var moveY = nowY - this.opts.lastY;
+        var top = this.currTop;
+        this.setScroll(top + moveY);
+        this.opts.lastY = nowY;
+        return touch;
+    };
+    TouchScroll.prototype.getMaxScrollHeight = function(){
+        var scroll = this.scroll;
+        var wrap = this.wrap;
+        var h1 = Math.max(scroll.offsetHeight, scroll.scrollHeight);
+        var h2 = Math.min(wrap.clientHeight, wrap.offsetHeight);
+        return h1 > h2 ? h1 - h2 : 0;
+    };
+    TouchScroll.prototype.getClearTop = function(top){
+        var minTop = this.getMaxScrollHeight();
+        if(top > 0){
+            return 0;
+        } else if(top < -minTop){
+            return -minTop;
+        } else {
+            return top;
+        }
+    };
+    TouchScroll.prototype.setInertiaMove = function(v, startTime){
+        if(this.inertiaMoveID){
+            clearTimeout(this.inertiaMoveID);
+            this.inertiaMoveID = null;
+        }
+        var that = this;
+        var dir = v > 0 ? -1 : 1; //加速度方向
+        var deceleration = dir * 0.0006;
+        var duration = v / deceleration; //速度消减至0所需时间
+        var dist = v * duration / 2; //最终移动多少
+        var top = this.currTop - dist;
+        var s = Math.abs(duration / 10000) + 1;
+        this.setScroll(top);
+        this.scroll.style.webkitTransition = ("-webkit-transform " + s + "s cubic-bezier(0.333333, 0.666667, 0.666667, 1) 0s");
+        this.inertiaMoveID = setTimeout(function(){
+            that.scroll.style.webkitTransition = "";
+        }, s * 1000 + 500);
+    };
+    new TouchScroll(
+        document.getElementById("aaa"),
+        document.getElementById("xxx")
+    );
+})(this);
+</script>
+</body>
+</html>
